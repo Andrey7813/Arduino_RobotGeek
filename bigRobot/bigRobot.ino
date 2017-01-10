@@ -20,7 +20,7 @@ PROGMEM prog_uint16_t Home[] =            {  8, 507, 380, 644, 360, 664, 861, 20
 
 PROGMEM prog_uint16_t vCardHolderRestPosition[] =  { 8, 512, 380, 644, 360, 664, 861, 205, 100 };
 
-PROGMEM prog_uint16_t step1_1[] =                  { 8, 500, 549, 475, 309, 715, 782, 205, 450 }; //737
+PROGMEM prog_uint16_t step1_1[] =                  { 8, 510, 549, 475, 309, 715, 782, 205, 450 }; //782
 PROGMEM prog_uint16_t step2_1[] =                  { 8, 657, 549, 475, 309, 715, 782, 205, 450 };
 PROGMEM prog_uint16_t step3_1[] =                  { 8, 657, 549, 475, 309, 715, 782, 205, 100 };
 PROGMEM prog_uint16_t step4_1[] =                  { 8, 537, 549, 475, 309, 715, 782, 205, 100 };
@@ -58,6 +58,8 @@ PROGMEM prog_uint16_t iStep3[] =                  { 8, 517, 650, 374, 436, 588, 
 PROGMEM prog_uint16_t iStep4[] =                  { 8, 517, 650, 374, 436, 588, 760, 205, 450 };//746
 PROGMEM prog_uint16_t iStep5[] =                  { 8, 517, 640, 384, 411, 613, 760, 205, 450 }; // { 8, 517, 625, 399, 396, 628, 737, 205, 450 };
 PROGMEM prog_uint16_t iStep6[] =                  { 8, 517, 640, 384, 411, 613, 760, 205, 50 };
+
+PROGMEM prog_uint16_t wStep1[] =                  { 8, 517, 770, 254, 811, 213, 520, 205, 50 };
 
 int curMenu = 0;
 int repeats = 0;
@@ -251,7 +253,7 @@ void loop()
         case '5': slotNumber = 5; curMenu = 1; scndMenu(); incomingByte = 10; break;
         case '6': slotNumber = 6; curMenu = 1; scndMenu(); incomingByte = 10; break;
         case '7': demo(); curMenu = 1; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
-        case '8': init_(); curMenu = 1; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        case '8': wagCard(); curMenu = 1; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
       }
     }if(curMenu == 1 && incomingByte != 10)
     {
@@ -398,6 +400,15 @@ void init_()
     move_insert_invert();
     doGesture(Home, 1000);
  }
+ 
+ void wagCard()
+ {
+   doGesture(Home, 1000);
+   doGesture(wStep1, 1000);
+   delay(3000);
+   doGesture(Home, 1000);
+   
+ }
 
 void demo()
 {
@@ -466,7 +477,7 @@ void mainMenu()
    Serial.println("5. Insert card from slot 5");
    Serial.println("6. Insert card from slot 6");
    Serial.println("7. Run demo");
-   Serial.println("8. Initial inserting");
+   Serial.println("8. Wag the card");
    Serial.println("###########################");
 }
 
