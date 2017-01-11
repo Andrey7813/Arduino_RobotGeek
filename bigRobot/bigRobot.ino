@@ -26,8 +26,8 @@ PROGMEM prog_uint16_t step3_1[] =                  { 8, 657, 549, 475, 309, 715,
 PROGMEM prog_uint16_t step4_1[] =                  { 8, 537, 549, 475, 309, 715, 782, 205, 100 };
 
 PROGMEM prog_uint16_t step1_2[] =                  { 8, 500, 465, 559, 316, 708, 695, 205, 450 }; //592
-PROGMEM prog_uint16_t step2_2[] =                  { 8, 657, 465, 559, 316, 708, 695, 205, 450 };
-PROGMEM prog_uint16_t step3_2[] =                  { 8, 657, 465, 559, 316, 708, 695, 205, 100 };
+PROGMEM prog_uint16_t step2_2[] =                  { 8, 656, 465, 559, 316, 708, 695, 205, 450 };
+PROGMEM prog_uint16_t step3_2[] =                  { 8, 656, 465, 559, 316, 708, 695, 205, 100 };
 PROGMEM prog_uint16_t step4_2[] =                  { 8, 527, 465, 559, 316, 708, 695, 205, 100 };
 
 PROGMEM prog_uint16_t step1_3[] =                  { 8, 500, 417, 607, 358, 666, 594, 205, 450 }; //592
@@ -51,10 +51,9 @@ PROGMEM prog_uint16_t step3_6[] =                  { 8, 657, 438, 586, 581, 443,
 PROGMEM prog_uint16_t step4_6[] =                  { 8, 527, 438, 586, 581, 443, 400, 205, 100 };
 
 PROGMEM prog_uint16_t iStep1[] =                  { 8, 517, 620, 404, 311, 713, 865, 205, 50 };
-PROGMEM prog_uint16_t iStep0_5[] =                { 8, 517, 630, 374, 341, 687, 830, 205, 50 };
-PROGMEM prog_uint16_t iStep1_5[] =                { 8, 517, 600, 424, 341, 683, 770, 205, 50 };
 PROGMEM prog_uint16_t iStep2[] =                  { 8, 517, 655, 369, 426, 598, 750, 205, 50 };//{ 8, 517, 655, 369, 426, 598, 750, 205, 50 }
 PROGMEM prog_uint16_t iStep3[] =                  { 8, 517, 650, 374, 436, 588, 760, 205, 50 };//745
+PROGMEM prog_uint16_t iStep4_initial[] =          { 8, 517, 585, 439, 371, 653, 720, 205, 450 };//746
 PROGMEM prog_uint16_t iStep4[] =                  { 8, 517, 650, 374, 436, 588, 760, 205, 450 };//746
 PROGMEM prog_uint16_t iStep5[] =                  { 8, 517, 640, 384, 411, 613, 760, 205, 450 }; // { 8, 517, 625, 399, 396, 628, 737, 205, 450 };
 PROGMEM prog_uint16_t iStep6[] =                  { 8, 517, 640, 384, 411, 613, 760, 205, 50 };
@@ -86,6 +85,14 @@ void move_insert()
   doGesture(iStep6, 1000);
 }
 
+void move_insert_initial()
+{
+  doGesture(iStep4_initial, 1000);
+  doGesture(iStep4, 1000);
+  doGesture(iStep5, 1000);
+  doGesture(iStep6, 1000);
+}
+
 void move_insert_invert()
 {
   doGesture(iStep2, 800);
@@ -98,7 +105,7 @@ void move5_take()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step1_5, 800);
   doGesture(step2_5, 800);
-  delay(800);
+  delay(1000);
   doGesture(step3_5, 800);
   doGesture(step4_5, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -110,6 +117,7 @@ void move5_return()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step4_5, 800);
   doGesture(step3_5, 800);
+  delay(1000);
   doGesture(step2_5, 800);
   doGesture(step1_5, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -121,7 +129,7 @@ void move4_take()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step1_4, 800);
   doGesture(step2_4, 800);
-  delay(800);
+  delay(1000);
   doGesture(step3_4, 800);
   doGesture(step4_4, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -133,6 +141,7 @@ void move4_return()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step4_4, 800);
   doGesture(step3_4, 800);
+  delay(1000);
   doGesture(step2_4, 800);
   doGesture(step1_4, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -144,7 +153,7 @@ void move6_take()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step1_6, 800);
   doGesture(step2_6, 800);
-  delay(800);
+  delay(1000);
   doGesture(step3_6, 800);
   doGesture(step4_6, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -156,6 +165,7 @@ void move6_return()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step4_6, 800);
   doGesture(step3_6, 800);
+  delay(1000);
   doGesture(step2_6, 800);
   doGesture(step1_6, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -167,7 +177,7 @@ void move3_take()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step1_3, 800);
   doGesture(step2_3, 800);
-  delay(800);
+  delay(1000);
   doGesture(step3_3, 800);
   doGesture(step4_3, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -179,6 +189,7 @@ void move3_return()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step4_3, 800);
   doGesture(step3_3, 800);
+  delay(1000);
   doGesture(step2_3, 800);
   doGesture(step1_3, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -190,7 +201,7 @@ void move1_take()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step1_1, 800);
   doGesture(step2_1, 800);
-  delay(800);
+  delay(1000);
   doGesture(step3_1, 800);
   doGesture(step4_1, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -202,6 +213,7 @@ void move1_return()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step4_1, 800);
   doGesture(step3_1, 800);
+  delay(1000);
   doGesture(step2_1, 800);
   doGesture(step1_1, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -213,7 +225,7 @@ void move2_take()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step1_2, 800);
   doGesture(step2_2, 800);
-  delay(800);
+  delay(1000);
   doGesture(step3_2, 800);
   doGesture(step4_2, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -225,6 +237,7 @@ void move2_return()
   doGesture(vCardHolderRestPosition, 800);
   doGesture(step4_2, 800);
   doGesture(step3_2, 800);
+  delay(1000);
   doGesture(step2_2, 800);
   doGesture(step1_2, 800);
   doGesture(vCardHolderRestPosition, 800);
@@ -252,8 +265,14 @@ void loop()
         case '4': slotNumber = 4; curMenu = 1; scndMenu(); incomingByte = 10; break;
         case '5': slotNumber = 5; curMenu = 1; scndMenu(); incomingByte = 10; break;
         case '6': slotNumber = 6; curMenu = 1; scndMenu(); incomingByte = 10; break;
-        case '7': demo(); curMenu = 1; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
-        case '8': wagCard(); curMenu = 1; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        case '7': initSlot1();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        case '8': initSlot2();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        case '9': initSlot3();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        case 'a': initSlot1();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        case 'b': initSlot1();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        case 'c': initSlot1();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        case 'd': demo(); curMenu = 1; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        
       }
     }if(curMenu == 1 && incomingByte != 10)
     {
@@ -391,24 +410,36 @@ void insertFromSlot6()
 
 }
 
-void init_()
+void initSlot1()
 {
- 
-    doGesture(Home, 1000);
-    move_insert();
-    delay(WAIT_FOR_CARD_PROCESSING);
+    move_insert_initial();
     move_insert_invert();
     doGesture(Home, 1000);
- }
- 
- void wagCard()
- {
-   doGesture(Home, 1000);
-   doGesture(wStep1, 1000);
-   delay(3000);
-   doGesture(Home, 1000);
-   
- }
+    move1_return();
+    doGesture(Home, 1000);
+
+}
+
+void initSlot2()
+{
+    move_insert_initial();
+    move_insert_invert();
+    doGesture(Home, 1000);
+    move2_return();
+    doGesture(Home, 1000);
+
+}
+
+void initSlot3()
+{
+    move_insert_initial();
+    move_insert_invert();
+    doGesture(Home, 1000);
+    move3_return();
+    doGesture(Home, 1000);
+
+}
+
 
 void demo()
 {
@@ -476,8 +507,13 @@ void mainMenu()
    Serial.println("4. Insert card from slot 4");
    Serial.println("5. Insert card from slot 5");
    Serial.println("6. Insert card from slot 6");
-   Serial.println("7. Run demo");
-   Serial.println("8. Wag the card");
+   Serial.println("7. Initially put the card into slot #1");
+   Serial.println("8. Initially put the card into slot #2");
+   Serial.println("9. Initially put the card into slot #3");
+   Serial.println("a. Initially put the card into slot #4");
+   Serial.println("b. Initially put the card into slot #5");
+   Serial.println("c. Initially put the card into slot #6");
+   Serial.println("d. Run demo");
    Serial.println("###########################");
 }
 
