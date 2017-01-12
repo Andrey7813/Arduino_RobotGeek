@@ -15,10 +15,8 @@ int WAIT_FOR_CARD_PROCESSING = 5000;
 // 7 - Gripper rotation (200 - revers rotation, 700 - clockwise rotation)
 // 8 - Gripper  (100 close)
 
-// Servos numbers                                1    2    3    4    5    6    7    8
-PROGMEM prog_uint16_t Home[] =            {  8, 507, 380, 644, 360, 664, 861, 205, 100};
 
-PROGMEM prog_uint16_t vCardHolderRestPosition[] =  { 8, 512, 380, 644, 360, 664, 861, 205, 100 };
+PROGMEM prog_uint16_t vCardHolderRestPosition[] =  { 8, 507, 380, 644, 360, 664, 861, 205, 100 };
 
 PROGMEM prog_uint16_t step1_1[] =                  { 8, 510, 549, 475, 309, 715, 782, 205, 450 }; //782
 PROGMEM prog_uint16_t step2_1[] =                  { 8, 657, 549, 475, 309, 715, 782, 205, 450 };
@@ -312,14 +310,14 @@ void insertFromSlot1()
   
   for(int i = 1; i <= repeats; i++)
   {
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move1_take();
     move_insert();
     delay(WAIT_FOR_CARD_PROCESSING);
     move_insert_invert();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move1_return();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
   }
 
 }
@@ -329,14 +327,14 @@ void insertFromSlot2()
   
   for(int i = 1; i <= repeats; i++)
   {
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move2_take();
     move_insert();
     delay(WAIT_FOR_CARD_PROCESSING);
     move_insert_invert();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move2_return();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
   }
 
 }
@@ -346,14 +344,14 @@ void insertFromSlot3()
   
   for(int i = 1; i <= repeats; i++)
   {
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move3_take();
     move_insert();
     delay(WAIT_FOR_CARD_PROCESSING);
     move_insert_invert();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move3_return();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
   }
 
 }
@@ -363,14 +361,14 @@ void insertFromSlot4()
   
   for(int i = 1; i <= repeats; i++)
   {
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move4_take();
     move_insert();
     delay(WAIT_FOR_CARD_PROCESSING);
     move_insert_invert();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move4_return();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
   }
 
 }
@@ -380,14 +378,14 @@ void insertFromSlot5()
   
   for(int i = 1; i <= repeats; i++)
   {
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move5_take();
     move_insert();
     delay(WAIT_FOR_CARD_PROCESSING);
     move_insert_invert();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move5_return();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
   }
 
 }
@@ -398,14 +396,14 @@ void insertFromSlot6()
 
   for(int i = 1; i <= repeats; i++)
   {
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move6_take();
     move_insert();
     delay(WAIT_FOR_CARD_PROCESSING);
     move_insert_invert();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move6_return();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
   }
 
 }
@@ -414,9 +412,9 @@ void initSlot1()
 {
     move_insert_initial();
     move_insert_invert();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move1_return();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
 
 }
 
@@ -424,9 +422,9 @@ void initSlot2()
 {
     move_insert_initial();
     move_insert_invert();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move2_return();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
 
 }
 
@@ -434,9 +432,9 @@ void initSlot3()
 {
     move_insert_initial();
     move_insert_invert();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
     move3_return();
-    doGesture(Home, 1000);
+    doGesture(vCardHolderRestPosition, 1000);
 
 }
 
@@ -446,52 +444,52 @@ void demo()
   
   for(int i = 1; i <= 1; i++)
  {
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move6_take();
   move_insert();
   delay(WAIT_FOR_CARD_PROCESSING);
   move_insert_invert();
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move1_return();
   
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move1_take();
   move_insert();
   delay(WAIT_FOR_CARD_PROCESSING);
   move_insert_invert();
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move5_return();
   
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move5_take();
   move_insert();
   delay(WAIT_FOR_CARD_PROCESSING);
   move_insert_invert();
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move2_return();
   
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move2_take();
   move_insert();
   delay(WAIT_FOR_CARD_PROCESSING);
   move_insert_invert();
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move4_return();
   
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move4_take();
   move_insert();
   delay(WAIT_FOR_CARD_PROCESSING);
   move_insert_invert();
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move3_return();
   
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move3_take();
   move_insert();
   delay(WAIT_FOR_CARD_PROCESSING);
   move_insert_invert();
-  doGesture(Home, 1000);
+  doGesture(vCardHolderRestPosition, 1000);
   move6_return();}
 
 }
@@ -507,6 +505,7 @@ void mainMenu()
    Serial.println("4. Insert card from slot 4");
    Serial.println("5. Insert card from slot 5");
    Serial.println("6. Insert card from slot 6");
+   Serial.println("--------------------------");
    Serial.println("7. Initially put the card into slot #1");
    Serial.println("8. Initially put the card into slot #2");
    Serial.println("9. Initially put the card into slot #3");
