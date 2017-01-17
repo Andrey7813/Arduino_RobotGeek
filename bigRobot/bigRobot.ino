@@ -16,7 +16,7 @@ int WAIT_FOR_CARD_PROCESSING = 5000;
 // 8 - Gripper  (100 close)
 
 
-PROGMEM prog_uint16_t vCardHolderRestPosition[] =  { 8, 507, 380, 644, 360, 664, 861, 205, 100 };
+PROGMEM prog_uint16_t vCardHolderRestPosition[] =  { 8, 507, 380, 644, 360, 664, 461, 205, 100 }; //507
 
 PROGMEM prog_uint16_t step1_1[] =                  { 8, 510, 553, 471, 313, 711, 782, 205, 450 }; //782
 PROGMEM prog_uint16_t step2_1[] =                  { 8, 656, 553, 471, 313, 711, 782, 205, 450 };
@@ -38,17 +38,17 @@ PROGMEM prog_uint16_t step2_4[] =                  { 8, 657, 402, 623, 412, 612,
 PROGMEM prog_uint16_t step3_4[] =                  { 8, 657, 402, 623, 412, 612, 529, 205, 100 };
 PROGMEM prog_uint16_t step4_4[] =                  { 8, 527, 402, 623, 412, 612, 529, 205, 100 };
 
-PROGMEM prog_uint16_t step1_5[] =                  { 8, 500, 410, 614, 485, 538, 459, 205, 450 }; //592
-PROGMEM prog_uint16_t step2_5[] =                  { 8, 657, 410, 614, 485, 538, 459, 205, 450 };
-PROGMEM prog_uint16_t step3_5[] =                  { 8, 657, 410, 614, 485, 538, 459, 205, 100 };
-PROGMEM prog_uint16_t step4_5[] =                  { 8, 527, 410, 614, 485, 538, 459, 205, 100 };
+PROGMEM prog_uint16_t step1_5[] =                  { 8, 500, 410, 614, 485, 538, 455, 205, 450 }; //459
+PROGMEM prog_uint16_t step2_5[] =                  { 8, 657, 410, 614, 485, 538, 455, 205, 450 };
+PROGMEM prog_uint16_t step3_5[] =                  { 8, 657, 410, 614, 485, 538, 455, 205, 100 };
+PROGMEM prog_uint16_t step4_5[] =                  { 8, 527, 410, 614, 485, 538, 455, 205, 100 };
 
-PROGMEM prog_uint16_t step1_6[] =                  { 8, 500, 438, 586, 581, 443, 400, 205, 450 }; //592
+PROGMEM prog_uint16_t step1_6[] =                  { 8, 535, 438, 586, 581, 443, 400, 205, 450 }; //500
 PROGMEM prog_uint16_t step2_6[] =                  { 8, 657, 438, 586, 581, 443, 400, 205, 450 };
 PROGMEM prog_uint16_t step3_6[] =                  { 8, 657, 438, 586, 581, 443, 400, 205, 100 };
-PROGMEM prog_uint16_t step4_6[] =                  { 8, 527, 438, 586, 581, 443, 400, 205, 100 };
+PROGMEM prog_uint16_t step4_6[] =                  { 8, 535, 438, 586, 581, 443, 400, 205, 100 };//527
 
-PROGMEM prog_uint16_t iStep1[] =                  { 8, 517, 620, 404, 311, 713, 865, 205, 50 };
+PROGMEM prog_uint16_t iStep1[] =                  { 8, 517, 620, 404, 311, 713, 865, 205, 50 };//517
 PROGMEM prog_uint16_t iStep2[] =                  { 8, 517, 655, 369, 426, 598, 750, 205, 50 };//{ 8, 517, 655, 369, 426, 598, 750, 205, 50 }
 PROGMEM prog_uint16_t iStep3[] =                  { 8, 517, 650, 374, 436, 588, 760, 205, 50 };//745
 PROGMEM prog_uint16_t iStep4_initial[] =          { 8, 517, 585, 439, 371, 653, 720, 205, 450 };//746
@@ -59,8 +59,8 @@ PROGMEM prog_uint16_t iStep6[] =                  { 8, 517, 640, 384, 411, 613, 
 PROGMEM prog_uint16_t wStep1[] =                  { 8, 517, 770, 254, 811, 213, 520, 205, 50 };
 
 int curMenu = 0;
-int repeats = 0;
-int slotNumber = 0;
+int repeats = 1;
+
 
 
 void setup()
@@ -257,40 +257,29 @@ void loop()
     {
       switch(incomingByte)
       {
-        case '1': slotNumber = 1; curMenu = 1; scndMenu(); incomingByte = 10; break;
-        case '2': slotNumber = 2; curMenu = 1; scndMenu(); incomingByte = 10; break;
-        case '3': slotNumber = 3; curMenu = 1; scndMenu(); incomingByte = 10; break;
-        case '4': slotNumber = 4; curMenu = 1; scndMenu(); incomingByte = 10; break;
-        case '5': slotNumber = 5; curMenu = 1; scndMenu(); incomingByte = 10; break;
-        case '6': slotNumber = 6; curMenu = 1; scndMenu(); incomingByte = 10; break;
-        case '7': initSlot1();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
-        case '8': initSlot2();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
-        case '9': initSlot3();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
-        case 'a': initSlot1();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
-        case 'b': initSlot1();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
-        case 'c': initSlot1();curMenu = 0; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
-        case 'd': demo(); curMenu = 1; incomingByte = 10; slotNumber = 0; repeats = 0; mainMenu(); break;
+        case '1': doInsertion(1); curMenu = 0;  incomingByte = 10;  break;
+        case '2': doInsertion(2); curMenu = 0;  incomingByte = 10;  break;
+        case '3': doInsertion(3); curMenu = 0;  incomingByte = 10;  break;
+        case '4': doInsertion(4); curMenu = 0;  incomingByte = 10;  break;
+        case '5': doInsertion(5); curMenu = 0;  incomingByte = 10;  break;
+        case '6': doInsertion(6); curMenu = 0;  incomingByte = 10;  break;
+        case '7': initSlot1(); curMenu = 0; incomingByte = 10; break;
+        case '8': initSlot2(); curMenu = 0; incomingByte = 10; break;
+        case '9': initSlot3(); curMenu = 0; incomingByte = 10; break;
+        case 'a': initSlot4(); curMenu = 0; incomingByte = 10; break;
+        case 'b': initSlot5(); curMenu = 0; incomingByte = 10; break;
+        case 'c': initSlot6(); curMenu = 0; incomingByte = 10; break;
+        case 'd': demo(); curMenu = 0; incomingByte = 10;  break;
         
       }
-    }if(curMenu == 1 && incomingByte != 10)
-    {
-      Serial.println(incomingByte);
-    switch(incomingByte)
-      {
-        case '1': repeats = 1; curMenu = 0; incomingByte = 10; break;
-        case '2': repeats = 2; curMenu = 0; incomingByte = 10; break;
-        case '3': repeats = 5; curMenu = 0; incomingByte = 10; break;
-      }
+    }
 
       mainMenu();
-      doInsertion();
-      slotNumber = 0; repeats = 0; 
-    }
-    
+   
    }
 }
 
-void doInsertion()
+void doInsertion(int slotNumber)
 {
   
   switch(slotNumber)
@@ -302,7 +291,7 @@ void doInsertion()
     case 5: insertFromSlot5(); break;
     case 6: insertFromSlot6(); break;
   }
-
+   
 }
 
 void insertFromSlot1()
@@ -319,7 +308,7 @@ void insertFromSlot1()
     move1_return();
     doGesture(vCardHolderRestPosition, 1000);
   }
-
+   
 }
 
 void insertFromSlot2()
@@ -434,6 +423,36 @@ void initSlot3()
     move_insert_invert();
     doGesture(vCardHolderRestPosition, 1000);
     move3_return();
+    doGesture(vCardHolderRestPosition, 1000);
+
+}
+
+void initSlot4()
+{
+    move_insert_initial();
+    move_insert_invert();
+    doGesture(vCardHolderRestPosition, 1000);
+    move4_return();
+    doGesture(vCardHolderRestPosition, 1000);
+
+}
+
+void initSlot5()
+{
+    move_insert_initial();
+    move_insert_invert();
+    doGesture(vCardHolderRestPosition, 1000);
+    move5_return();
+    doGesture(vCardHolderRestPosition, 1000);
+
+}
+
+void initSlot6()
+{
+    move_insert_initial();
+    move_insert_invert();
+    doGesture(vCardHolderRestPosition, 1000);
+    move6_return();
     doGesture(vCardHolderRestPosition, 1000);
 
 }
