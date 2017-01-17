@@ -68,7 +68,7 @@ void setup()
   delay(200);
   Serial.begin(9600);
   
-  mainMenu();
+ // mainMenu();
 
 }  
 
@@ -274,8 +274,6 @@ void loop()
       }
     }
 
-      mainMenu();
-   
    }
 }
 
@@ -291,6 +289,7 @@ void doInsertion(int slotNumber)
     case 5: insertFromSlot5(); break;
     case 6: insertFromSlot6(); break;
   }
+  Serial.println("DONE");
    
 }
 
@@ -325,6 +324,7 @@ void insertFromSlot2()
     move2_return();
     doGesture(vCardHolderRestPosition, 1000);
   }
+  
 
 }
 
@@ -342,6 +342,7 @@ void insertFromSlot3()
     move3_return();
     doGesture(vCardHolderRestPosition, 1000);
   }
+  
 
 }
 
@@ -359,6 +360,7 @@ void insertFromSlot4()
     move4_return();
     doGesture(vCardHolderRestPosition, 1000);
   }
+ 
 
 }
 
@@ -394,6 +396,7 @@ void insertFromSlot6()
     move6_return();
     doGesture(vCardHolderRestPosition, 1000);
   }
+  
 
 }
 
@@ -404,7 +407,7 @@ void initSlot1()
     doGesture(vCardHolderRestPosition, 1000);
     move1_return();
     doGesture(vCardHolderRestPosition, 1000);
-
+    Serial.println("DONE");
 }
 
 void initSlot2()
@@ -414,7 +417,7 @@ void initSlot2()
     doGesture(vCardHolderRestPosition, 1000);
     move2_return();
     doGesture(vCardHolderRestPosition, 1000);
-
+    Serial.println("DONE");
 }
 
 void initSlot3()
@@ -424,7 +427,7 @@ void initSlot3()
     doGesture(vCardHolderRestPosition, 1000);
     move3_return();
     doGesture(vCardHolderRestPosition, 1000);
-
+    Serial.println("DONE");
 }
 
 void initSlot4()
@@ -434,7 +437,7 @@ void initSlot4()
     doGesture(vCardHolderRestPosition, 1000);
     move4_return();
     doGesture(vCardHolderRestPosition, 1000);
-
+    Serial.println("DONE");
 }
 
 void initSlot5()
@@ -444,7 +447,7 @@ void initSlot5()
     doGesture(vCardHolderRestPosition, 1000);
     move5_return();
     doGesture(vCardHolderRestPosition, 1000);
-
+    Serial.println("DONE");
 }
 
 void initSlot6()
@@ -454,7 +457,7 @@ void initSlot6()
     doGesture(vCardHolderRestPosition, 1000);
     move6_return();
     doGesture(vCardHolderRestPosition, 1000);
-
+    Serial.println("DONE");
 }
 
 
@@ -510,7 +513,7 @@ void demo()
   move_insert_invert();
   doGesture(vCardHolderRestPosition, 1000);
   move6_return();}
-
+   Serial.println("DONE");
 }
 
 void mainMenu()
@@ -535,15 +538,6 @@ void mainMenu()
    Serial.println("###########################");
 }
 
-void scndMenu()
-{
-  Serial.println("###########################");
-  Serial.println("Work! Oh, no! How many times?");
-  Serial.println("1. 1");
-  Serial.println("2. 2");
-  Serial.println("3. 5");
-  Serial.println("###########################");
-}
 
 void doGesture(const unsigned int* gesture, int speed_)
 {
@@ -556,5 +550,3 @@ void doGesture(const unsigned int* gesture, int speed_)
         delay(10);
     }
 }
-
-
