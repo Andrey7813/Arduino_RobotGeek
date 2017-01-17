@@ -18,10 +18,10 @@ int WAIT_FOR_CARD_PROCESSING = 5000;
 
 PROGMEM prog_uint16_t vCardHolderRestPosition[] =  { 8, 507, 380, 644, 360, 664, 861, 205, 100 };
 
-PROGMEM prog_uint16_t step1_1[] =                  { 8, 510, 549, 475, 309, 715, 782, 205, 450 }; //782
-PROGMEM prog_uint16_t step2_1[] =                  { 8, 657, 549, 475, 309, 715, 782, 205, 450 };
-PROGMEM prog_uint16_t step3_1[] =                  { 8, 657, 549, 475, 309, 715, 782, 205, 100 };
-PROGMEM prog_uint16_t step4_1[] =                  { 8, 537, 549, 475, 309, 715, 782, 205, 100 };
+PROGMEM prog_uint16_t step1_1[] =                  { 8, 510, 553, 471, 313, 711, 782, 205, 450 }; //782
+PROGMEM prog_uint16_t step2_1[] =                  { 8, 656, 553, 471, 313, 711, 782, 205, 450 };
+PROGMEM prog_uint16_t step3_1[] =                  { 8, 656, 553, 471, 313, 711, 782, 205, 100 };
+PROGMEM prog_uint16_t step4_1[] =                  { 8, 537, 553, 471, 313, 711, 782, 205, 100 };
 
 PROGMEM prog_uint16_t step1_2[] =                  { 8, 500, 465, 559, 316, 708, 695, 205, 450 }; //592
 PROGMEM prog_uint16_t step2_2[] =                  { 8, 656, 465, 559, 316, 708, 695, 205, 450 };
